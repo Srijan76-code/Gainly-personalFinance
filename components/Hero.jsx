@@ -1,10 +1,15 @@
+"use client"
+
 import Image from 'next/image'
-import React from 'react'
+import React, { use } from 'react'
 import Button from './styleComponent/Button'
 import { ContainerScroll } from './ui/container-scroll-animation'
+import { useRouter } from 'next/navigation'
+
 
 
 const Hero = () => {
+    const router=useRouter()
     return (
 
         <div className=' h-[90vh] md:h-[125vh]' >
@@ -18,7 +23,7 @@ const Hero = () => {
                 <div className='flex pt-2  lg:pt-8 flex-col justify-center items-center' >
 
                     <Image src={"/hero/spotlight.png"} width={1500} height={1500} className='absolute bottom:1   blur-3xl w-1/2 ' />
-                    <Button  bg="[#17132c]">Get Started</Button>
+                    <Button handleclick={()=>router.push("/dashboard")}  >Get Started</Button>
                 </div>
 
             </div>

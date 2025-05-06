@@ -1,8 +1,10 @@
-const Button = ({ children,bg="black" }) => {
+
+
+const Button = ({ children,handleclick=()=>{},bg="bg-[#17132c]" }) => {
     return (
-      <button
+      <button onClick={handleclick}
         type="submit"
-        className={`relative z-10 px-6 py-2 overflow-hidden border rounded-full group font-sans flex justify-center items-center gap-2  text-sm text-white bg-${bg} backdrop-blur-md shadow-xl lg:font-semibold border-white`}
+        className={`cursor-pointer relative z-10 px-6 py-2 overflow-hidden border rounded-full group font-sans flex justify-center items-center gap-2  text-sm text-white ${bg} backdrop-blur-md shadow-xl lg:font-semibold border-white`}
       >
         {/* Pseudo-element for the animated background */}
         <span className="pointer-events-none absolute inset-0 -z-10 before:content-[''] before:absolute before:inset-0 before:-left-full before:w-full before:rounded-full before:bg-white before:transition-all before:duration-700 group-hover:before:left-0 group-hover:before:scale-200 group-hover:before:duration-500" />

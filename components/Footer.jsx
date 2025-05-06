@@ -10,10 +10,10 @@ const Footer = () => {
                 <div className='ml-8'>
                     <h3 className="font-semibold text-lg  mb-4">Quick Links</h3>
                     <ul className="space-y-2 font-light text-gray-400">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
                     </ul>
                 </div>
 
@@ -27,11 +27,12 @@ const Footer = () => {
                 {/* Social Links */}
                 <div>
                     <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-                    <div className="flex justify-center md:justify-start space-x-4 font-light text-gray-400 text-xl">
-                        <a href="#"><i className="fab fa-facebook"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-linkedin"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
+                    <div className="flex cursor-pointer justify-center md:justify-start space-x-4 font-light text-gray-400 text-xl">
+                    
+                        <a href="https://www.linkedin.com/in/srijan-patel-46a548323/"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/srijan.76/"><i className="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Srijan76-code/gainly"><i className="fab fa-github"></i></a>
+                        <a href="#"><i className="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
             </div>

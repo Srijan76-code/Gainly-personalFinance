@@ -1,9 +1,11 @@
 
 import Divider from '@/components/Divider'
+import Faq from '@/components/Faq'
 import Grid from '@/components/Grid'
 import { NavbarDemo } from '@/components/NavbarDemo'
 import Title from '@/components/Title'
 import Trust from '@/components/Trust'
+import { aboutFaq } from '@/data/aboutFaq'
 
 import React from 'react'
 const page = () => {
@@ -17,6 +19,7 @@ const page = () => {
         <Divider />
         <Trust />
         <Divider />
+        <Faq data={aboutFaq} />
 
       </NavbarDemo>
     </div>

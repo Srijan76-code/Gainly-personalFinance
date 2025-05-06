@@ -1,8 +1,10 @@
 
 import Divider from '@/components/Divider'
+import Faq from '@/components/Faq'
 import { NavbarDemo } from '@/components/NavbarDemo'
 import PricingCard from '@/components/PricingCard'
 import Title from '@/components/Title'
+import { pricingFaq } from '@/data/pricingFaq'
 import React from 'react'
 const page = () => {
   return (
@@ -16,6 +18,7 @@ const page = () => {
         <PricingCard />
         </div>
         <Divider/>
+        <Faq data={pricingFaq} />
       
        
       </NavbarDemo>
