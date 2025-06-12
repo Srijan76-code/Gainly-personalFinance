@@ -33,7 +33,7 @@ export function NavbarDemo({ children,bg="[#07080A]" }) {
       link: "/about",
     },
     {
-      name: "Community",
+      name: "Let's Connect",
       link: "/community",
     },
   ];

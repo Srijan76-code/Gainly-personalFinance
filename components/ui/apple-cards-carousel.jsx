@@ -46,13 +46,13 @@ export const Carousel = ({
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -950, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: -1000, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 950, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: 1000, behavior: "smooth" });
     }
   };
 
@@ -112,15 +112,15 @@ export const Carousel = ({
             ))}
           </div>
         </div>
-        <div className="mr-50 flex justify-end gap-2">
+        <div className="mr-50 flex justify-end  gap-2">
           <button
-            className="relative z-40 flex h-15 w-15 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative z-40 cursor-pointer flex h-15 w-15 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}>
             <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
           </button>
           <button
-            className="relative z-40 flex h-15 w-15 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative cursor-pointer z-40 flex h-15 w-15 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}>
             <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />

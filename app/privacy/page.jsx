@@ -13,7 +13,7 @@ const page = () => {
     <div className=" w-full" >
       <NavbarDemo >
 
-        <Title tw="1/2" subw="1/2" title="Dashboard" sub="" />
+        <Title tw="1/2" subw="1/2" title="Privacy Policy" sub="" />
         <Divider />
         <Faq data={aboutFaq} />
 
