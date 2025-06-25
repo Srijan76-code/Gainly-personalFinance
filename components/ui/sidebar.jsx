@@ -64,11 +64,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] shrink-0",
+          "h-full px-4 py-6 hidden  md:flex md:flex-col bg-neutral-100 dark:bg-[#151419] w-[300px] shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "300px" : "60px") : "300px",
+          width: animate ? (open ? "180px" : "60px") : "180px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -89,7 +89,7 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "h-10 px-4 py-4 flex flex-row md:hidden  items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full"
+          "h-10 px-4 py-4  flex flex-row md:hidden  items-center justify-between bg-neutral-100 dark:bg-dark:bg-[#151419] w-full"
         )}
         {...props}>
         <div className="flex justify-end z-20 w-full">
@@ -134,7 +134,7 @@ export const SidebarLink = ({
   return (
     <a
       href={link.href}
-      className={cn("flex items-center justify-start gap-2  group/sidebar py-2", className)}
+      className={cn("flex items-center justify-start gap-2  group/sidebar ", className)}
       {...props}>
       {link.icon}
       <motion.span
@@ -142,8 +142,16 @@ export const SidebarLink = ({
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">
+        // className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">
+        className="px-3 py-2 rounded-md text-neutral-700 dark:text-neutral-200 text-sm transition duration-150 whitespace-pre inline-block !m-0 dark:group-hover/sidebar:bg-[linear-gradient(135deg,#151419_0%,theme(colors.zinc.950)_30%,theme(colors.zinc.900)_50%,theme(colors.zinc.700)_70%,theme(colors.zinc.500)_85%,theme(colors.zinc.300)_100%)] dark:group-hover/sidebar:border dark:group-hover/sidebar:border-zinc-800 dark:group-hover/sidebar:text-white dark:group-hover/sidebar:shadow-inner"
+
+        
+        >
+
+
         {link.label}
+
+
       </motion.span>
     </a>
   );

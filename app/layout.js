@@ -6,6 +6,7 @@ import { dark } from "@clerk/themes";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import Divider from "@/components/Divider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,13 +29,13 @@ export default function RootLayout({ children }) {
           />
         </head>
         <body className={`inter.className bg-[#050709]`}>
-
+          <Toaster theme="dark" richColors />
           {children}
-          <div className=" w-full " >
+          {/* <div className=" w-full " >
             <Cta />
             <Divider />
             <Footer />
-            </div>
+            </div> */}
 
         </body>
       </html>

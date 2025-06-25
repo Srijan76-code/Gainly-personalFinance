@@ -21,7 +21,10 @@ import {
 
 
 
-export function NavbarDemo({ children,bg="[#07080A]" }) {
+
+export async function NavbarDemo({ children,bg="[#07080A]" }) {
+
+ 
 
   const navItems = [
     {

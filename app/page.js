@@ -1,4 +1,6 @@
+import Loader from "@/components/Loader";
 import Home from "@/sections/Home";
+import { Suspense } from "react";
 
 
 
@@ -6,7 +8,9 @@ import Home from "@/sections/Home";
 export default function Page() {
   return (
     <>
+    {/* <Suspense fallback={<Loader/>} > */}
     <Home/>
+    {/* </Suspense> */}
     
     </>
     

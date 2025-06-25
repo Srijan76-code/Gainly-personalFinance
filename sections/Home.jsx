@@ -1,16 +1,20 @@
 
-import Cta from '@/components/Cta'
 import Divider from '@/components/Divider'
 import FadeSlideOnView from '@/components/FadeSlideOnView'
 import Hero from '@/components/Hero'
 import { NavbarDemo } from '@/components/NavbarDemo'
+
+
 import Testimonials from '@/components/Testimonials'
 import { TimelineDemo } from '@/components/TimelineDemo'
 import Trust from '@/components/Trust'
 import Working from '@/components/Working'
+import { checkUser } from '@/lib/checkUser'
+
 import React from 'react'
 
-const Home = () => {
+const Home = async() => {
+   await checkUser()
     return (
         <div className=" w-full " >
             <NavbarDemo>
