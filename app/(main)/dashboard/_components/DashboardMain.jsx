@@ -44,7 +44,9 @@ const DashboardMain = async () => {
                     <div className='mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8  ' >
 
                         <MonthlyBudget defaultAccountName={defaultAccountName} initialBudget={budgetData?.budget}
-                            currentExpenses={budgetData?.currentExpenses==0 && 57604} />
+                            currentExpenses={budgetData?.currentExpenses 
+                                ||0
+                            } />
                         
 
                         <MonthlyTransactions defaultAccount={defaultAccount} accounts={accounts} />

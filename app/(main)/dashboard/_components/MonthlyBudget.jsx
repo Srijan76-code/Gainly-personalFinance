@@ -193,7 +193,7 @@ const [chartprogress,setChartProgress]=useState(((360*percentUsed)/100))
                   <div className="gap-4 flex justify-between items-center " >
                     <div>
                       <span className="font-medium text-sm" >Total expenses: </span>
-                      <span className="text-purple-400" >$ {currentExpenses.toFixed(2)} </span>
+                      <span className="text-purple-400" >$ {currentExpenses?.toFixed(2)} </span>
                       
                     </div>
                     
