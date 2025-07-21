@@ -19,6 +19,7 @@ import { getAccountWithTransactions } from '@/actions/account';
 import { format } from "date-fns";
 import { Loader } from 'lucide-react';
 import { categoryColors } from '@/data/categories';
+import { Badge } from '@/components/ui/badge';
 
 
 const MonthlyTransactions = ({ accounts,defaultAccount }) => {
@@ -57,7 +58,7 @@ const MonthlyTransactions = ({ accounts,defaultAccount }) => {
           <CardTitle>Recent Transactions</CardTitle>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <Button>{selectedName}</Button>
+              <Badge className="cursor-pointer  " >{selectedName}</Badge>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {accounts.map(({ id, name }) => (

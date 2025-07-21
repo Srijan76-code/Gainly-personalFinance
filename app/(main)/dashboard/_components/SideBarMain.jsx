@@ -1,23 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../../../../components/ui/sidebar";
-import {
-  IconArrowLeft,
-  IconBrandTabler,
-  IconSettings,
-  IconUserBolt,
-} from "@tabler/icons-react";
+
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import { SignedIn, UserButton, useUser } from "@clerk/nextjs";
-import { Home, LayoutDashboard } from "lucide-react";
+import { SignedIn, UserButton } from "@clerk/nextjs";
+import { ArrowLeftRight, BotMessageSquare, Home, LayoutDashboard, SquarePen, UserCog } from "lucide-react";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 
 
 export function SideBarMain({ children }) {
-  const { user } = useUser()
+  const user = useAuthStore((state) => state.user);
+  
+  
   const home=    {
     label: "Home",
     href: "/",
@@ -34,24 +32,24 @@ export function SideBarMain({ children }) {
       ),
     },
     {
-      label: "Profile",
-      href: "#",
+      label: "Accounts",
+      href: "/account",
       icon: (
-        <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <UserCog className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "Add Transactions",
+      href: "/AddTransactions",
       icon: (
-        <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <SquarePen className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Logout",
-      href: "#",
+      label: "AI Help",
+      href: "/ChatBot",
       icon: (
-        <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <BotMessageSquare className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
   ];
@@ -88,7 +86,7 @@ export function SideBarMain({ children }) {
   <ProfilePic />
   {open && (
     <div>
-      {user.firstName.charAt(0) + user.firstName.slice(1).toLowerCase()} {user.lastName.charAt(0) + user.lastName.slice(1).toLowerCase()}
+      {user?.firstName.charAt(0) + user?.firstName.slice(1).toLowerCase()} {user?.lastName.charAt(0) + user?.lastName.slice(1).toLowerCase()}
     </div>
   )}
 </div>

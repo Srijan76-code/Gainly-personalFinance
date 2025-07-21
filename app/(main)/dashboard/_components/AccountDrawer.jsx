@@ -54,7 +54,7 @@ const AccountDrawer = () => {
                 {/* To open drawer */}
 
                 <DrawerTrigger >
-                    <Card className=" cursor-pointer flex items-center justify-center   h-full bg-[#151419] border-dashed hover:shadow-md hover:shadow-neutral-800 transition-shadow " >
+                    <Card className="w-[85vw] cursor-pointer flex items-center justify-center   h-64 bg-[#151419] border-dashed hover:shadow-md hover:shadow-neutral-800 transition-shadow " >
                         <CardContent  >
                             <div className=' flex flex-col justify-center items-center gap-1 '>
                                 <p><Plus /></p>

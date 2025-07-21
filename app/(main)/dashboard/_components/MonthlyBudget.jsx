@@ -83,14 +83,17 @@ const [chartprogress,setChartProgress]=useState(((360*percentUsed)/100))
   }, [error]);
 
 
-  const chartData = [
-    {
-      name: "Spent",
-      value: Number(percentUsed) || 0,
-      fill: "#9333ea", 
-    },
 
-  ];
+    const chartData = [
+      {
+        name: "Spent",
+        value: Number(percentUsed) || 0,
+        fill: percentUsed >= 90 ? "#C70036" : "#9333ea",
+      },
+    ];
+    
+
+  
   const chartConfig = {
     type: "radial-bar",
     legend: false,

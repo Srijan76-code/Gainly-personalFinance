@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import Divider from "@/components/Divider";
 import { Toaster } from "sonner";
+import { AuthInitializer } from "@/components/AuthInitializer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           />
         </head>
         <body className={`inter.className bg-[#050709]`}>
+          <AuthInitializer/>
           <Toaster theme="dark" richColors />
           {children}
           {/* <div className=" w-full " >

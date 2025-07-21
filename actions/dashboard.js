@@ -79,6 +79,8 @@ export async function getUserAccounts() {
         // Getting userid from clerk 
         const {userId} = await auth()
         if (!userId) throw new Error("Unauthorized")
+            
+        
 
         // finding userid in db
         const user =await db.user.findUnique({

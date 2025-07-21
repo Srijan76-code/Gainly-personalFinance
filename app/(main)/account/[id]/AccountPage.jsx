@@ -14,6 +14,13 @@ const AccountPage = async ({ id }) => {
 
   return (
     <div className='space-y-8 px-6 flex-1 overflow-y-auto scroll-hidden'>
+      {/* {accountData.map(({ name, }) => (
+        <div>
+          <div>{name}</div>
+          <div></div>
+        </div>
+      ))} */}
+
       <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}>
         <AccountChart transactions={transactions} />
       </Suspense>
