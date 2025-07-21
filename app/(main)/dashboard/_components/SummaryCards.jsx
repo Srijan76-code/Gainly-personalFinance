@@ -92,12 +92,12 @@ const SummaryCards = ({ transactions }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Net Worth */}
-                <Card className="bg-[#151419] hover:bg-[#431C90] hover:shadow-md hover:shadow-neutral-800 transition-shadow text-white rounded-2xl shadow-md">
+                <Card className="bg-[#151419]   text-white rounded-2xl shadow-md">
                     <CardHeader>
-                        <CardTitle className="text-sm text-white">Net Worth</CardTitle>
+                        <CardTitle className="text-sm text-muted-foreground ">Net Worth</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-3xl text-purple-500 font-bold">₹ {netWorth.toFixed(2)}</p>
+                        <p className="text-3xl  font-bold">₹ {netWorth.toFixed(2)}</p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-2 text-purple-500 text-sm">
                         <TrendingUp className="h-4 w-4" />
@@ -105,12 +105,13 @@ const SummaryCards = ({ transactions }) => {
                     </CardFooter>
                 </Card>
                 {/* Income Card */}
-                <Card className="bg-[#151419] hover:bg-[#431C90] hover:shadow-md hover:shadow-neutral-800 transition-shadow text-white rounded-2xl shadow-md">
+                <Card className="bg-[#151419]   text-white rounded-2xl shadow-md">
+
                     <CardHeader>
-                        <CardTitle className="text-sm text-white">Income</CardTitle>
+                        <CardTitle className="text-sm text-muted-foreground">Income</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-3xl text-green-500 font-bold">₹ {totalIncome.toFixed(2)}</p>
+                        <p className="text-3xl  font-bold">₹ {totalIncome.toFixed(2)}</p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-2 text-green-400 text-sm">
                         <TrendingUp className="h-4 w-4" />
@@ -119,12 +120,16 @@ const SummaryCards = ({ transactions }) => {
                 </Card>
 
                 {/* Expense Card */}
-                <Card className="bg-[#151419] hover:bg-[#431C90] hover:shadow-md hover:shadow-neutral-800 transition-shadow text-white rounded-2xl shadow-md">
+                <Card className="bg-[#151419]   text-white rounded-2xl shadow-md">
+
+  
+
+
                     <CardHeader>
-                        <CardTitle className="text-sm text-white">Expense</CardTitle>
+                        <CardTitle className="text-sm text-muted-foreground">Expense</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-3xl font-bold text-red-500">₹ {totalExpense.toFixed(2)}</p>
+                        <p className="text-3xl font-bold ">₹ {totalExpense.toFixed(2)}</p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-2 text-red-400 text-sm">
                         <TrendingDown className="h-4 w-4" />
