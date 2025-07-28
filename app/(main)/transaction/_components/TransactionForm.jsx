@@ -80,11 +80,12 @@ export const AddTransactionForm = ({ accounts,
     const type = watch("type");
     const isRecurring = watch("isRecurring");
     const date = watch("date");
+    
 
     const filteredCategories = categories.filter(
         (category) => category.type === type
     );
-
+    console.log("filteredCategories:",filteredCategories)
     const onSubmit = (data) => {
         const formData = {
             ...data,
@@ -114,12 +115,14 @@ export const AddTransactionForm = ({ accounts,
         //   AI receipt scanner 
     const handleScanComplete = (scannedData) => {
         if (scannedData) {
+            console.log("scannedData: ",scannedData)
           setValue("amount", scannedData.amount.toString());
           setValue("date", new Date(scannedData.date));
           if (scannedData.description) {
             setValue("description", scannedData.description);
           }
           if (scannedData.category) {
+            console.log(scannedData.category)
             setValue("category", scannedData.category);
           }
           toast.success("Receipt scanned successfully");

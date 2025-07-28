@@ -10,7 +10,74 @@ const serializeAmount = (obj) => ({
     ...obj,
     amount: obj.amount.toNumber(),
 });
+const prompt = `
+You will be given either:
+- A **receipt image**, OR
+- A **CSV file** (or tabular text) with one or more transactions.
 
+Your task is to extract the relevant financial data in **JSON format** with these fields:
+
+{
+  "amount": number,
+  "date": "ISO date string",
+  "description": "string",
+  "merchantName": "string",
+  "category": "string ",  // MUST be chosen from the list below and should be capitalized
+  "type": "income" | "expense"
+}
+
+---
+
+### CATEGORY SELECTION:
+
+Analyze the context and choose the **closest matching category** from the list below:
+
+- housing  
+- transportation  
+- groceries  
+- utilities  
+- entertainment  
+- food  
+- shopping  
+- healthcare  
+- education  
+- personal  
+- travel  
+- insurance  
+- gifts  
+- bills  
+- income  
+- salary  
+- business  
+- investment  
+- gift-income  
+- refund  
+- other-expense  
+- other-income
+
+**Rules**:
+- Always pick the **closest matching category**.
+- Make it capitalized.
+- Don't skip the field.
+- If absolutely no category fits, fall back to other-expense or other-income.
+
+---
+
+### INSTRUCTIONS:
+
+- If input is a **receipt image**, extract total, date, merchant name, short description, and most relevant **expense category**.
+- If input is a **CSV or tabular text**, do the same for each row:
+  - Identify if the entry is income or expense type
+  - Extract all fields and assign the best-fit category in lowercase.
+
+### OUTPUT FORMAT:
+Respond only with:
+- A single JSON object if one transaction.
+- An array of JSON objects if multiple transactions (e.g., from CSV).
+
+If the input is not financial in nature, return: {}
+
+`
 
 export async function createTransaction(data) {
     try {
@@ -215,26 +282,7 @@ export async function scanReceipt(file) {
         // Convert ArrayBuffer to Base64
         const base64String = Buffer.from(arrayBuffer).toString("base64");
 
-        const prompt = `
-        Analyze this receipt image and extract the following information in JSON format:
-        - Total amount (just the number)
-        - Date (in ISO format)
-        - Description or items purchased (brief summary)
-        - Merchant/store name
-        - Suggested category (one of: housing,transportation,groceries,utilities,entertainment,food,shopping,healthcare,education,personal,travel,insurance,gifts,bills,other-expense )
-        
-        Only respond with valid JSON in this exact format:
-        {
-          "amount": number,
-          "date": "ISO date string",
-          "description": "string",
-          "merchantName": "string",
-          "category": "string"
-        }
   
-        If its not a recipt, return an empty object
-      `;
-
         const result = await model.generateContent([
             {
                 inlineData: {

@@ -28,6 +28,7 @@ export default function ReceiptScanner({ onScanComplete }) {
 
   useEffect(() => {
     if (scannedData && !scanReceiptLoading) {
+      console.log(scannedData)
       onScanComplete(scannedData);
       toast.success("Receipt scanned successfully");
     }

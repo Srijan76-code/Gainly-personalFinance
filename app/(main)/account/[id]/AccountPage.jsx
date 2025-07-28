@@ -11,12 +11,12 @@ const AccountPage = async ({ id }) => {
   const accountData = await getAccountWithTransactions(id);
   if (!accountData) notFound();
 
-  const { transactions,...account } = accountData;
+  const { transactions, ...account } = accountData;
 
   return (
     <div className='space-y-16 mt-12 px-6 flex-1 overflow-y-auto scroll-hidden'>
 
-<div className="flex gap-4 items-end justify-between">
+      <div className="flex gap-4 items-end justify-between">
 
         <div>
           <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-br from-[#A881FF] via-white to-[#A881FF] bg-clip-text text-transparent capitalize">
@@ -38,22 +38,22 @@ const AccountPage = async ({ id }) => {
         </div>
       </div>
 
-     
+
       <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}>
-      <div className='space-y-4' >
-        <p className=' bg-gradient-to-br from-[#A881FF] via-white to-[#A881FF] bg-clip-text text-transparent   font-bold flex text-sm sm:text-lg lg:text-2xl ' >
-        Account Chart</p>
-       
-        <AccountChart transactions={transactions} />
+        <div className='space-y-4' >
+          <p className=' bg-gradient-to-br from-[#A881FF] via-white to-[#A881FF] bg-clip-text text-transparent   font-bold flex text-sm sm:text-lg lg:text-2xl ' >
+            Account Chart</p>
+
+          <AccountChart transactions={transactions} />
         </div>
 
-        
+
       </Suspense>
       <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}>
         <div className='space-y-4  ' >
-        <p className=' bg-gradient-to-br from-[#A881FF] via-white to-[#A881FF] bg-clip-text text-transparent   font-bold flex text-sm sm:text-lg lg:text-2xl ' >
-        Transaction Table ({account._count.transactions} transactions)</p>
-        <TransactionTable transactions={transactions} />
+          <p className='mb-4 bg-gradient-to-br from-[#A881FF] via-white to-[#A881FF] bg-clip-text text-transparent   font-bold flex text-sm sm:text-lg lg:text-2xl ' >
+            Transaction Table ({account._count.transactions} transactions)</p>
+          <TransactionTable transactions={transactions} />
         </div>
       </Suspense>
     </div>
